@@ -1,0 +1,188 @@
+html {
+  height: 100%;
+}
+
+a{
+  text-decoration: none;
+  color: white;
+}
+
+body {
+  background: linear-gradient(180deg, rgba(9,140,203,1) 0%, rgba(236,255,120,1) 100%);
+  background-attachment: fixed;
+	margin: 0;
+	display: flex;
+	justify-content: center;
+}
+
+.error{
+
+        display: flex;
+        color: white;
+        font-size: 100px;
+        width: 40%;
+        height: 41%;
+        padding: 0 10px;
+      	margin: 330px 0 0 0;
+        position: absolute;
+        align-items: center;
+}
+
+.ship{
+  height: 40%;
+  width: 40%;
+}
+
+.code{
+overflow: auto;
+
+    max-width: 20%;
+    background-color: rgba(0,0,0,.5);
+    backdrop-filter: blur(10px);
+            border-radius: 40px;
+            word-wrap: break-word;
+            margin-right: 5%;
+
+
+}
+
+span{
+  margin: 0;
+  position: relative;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.message{
+  text-align: center;
+  max-width: 80%;
+  max-height: 350px;
+  background-color: rgba(0,0,0,.5);
+  backdrop-filter: blur(10px);
+          border-radius: 40px;
+          word-wrap: break-word;
+          overflow: auto;
+}
+
+.button{
+
+        border-radius: 40px;
+        align-items: center;
+      	background-color: rgba(0,0,0,.5);
+        backdrop-filter: blur(10px);
+        display: flex;
+        flex-direction: column;
+        top: 72%;
+        width: 40%;
+        height: 70px;
+      	margin: 130px 0 0 0;
+        position: absolute;
+}
+
+.button a{
+
+    top: 15%;
+
+}
+
+.option a{
+  color: white;
+  text-decoration: none;
+
+}
+.option:hover a{
+  color:black;
+}
+.option{
+    list-style: none;
+    text-decoration: none;
+		color: white;
+		font-family: sans-serif;
+		font-weight: bold;
+    font-size: 24px;
+    padding: 10px 7.45%;
+    padding: 5px 6.9%;
+		margin: 0 12px;
+    max-width: 100%;
+		position: relative;
+		cursor: pointer;
+		white-space: nowrap;
+}
+
+.check{
+  word-break: break-all;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+.option::before{
+  content: " ";
+  position: absolute;
+  top: 0;
+  left:0;
+  height:100%;
+  width: 100%;
+  z-index:-1;
+  transition: .2s;
+  border-radius: 25px;
+}
+
+.option:hover::before{
+						box-shadow: 0px 3px 20px 0px black;
+            background-color: #ecff78;
+      			transform: scale(1.1);
+}
+
+
+.button .option{
+
+            list-style: none;
+            text-align: center;
+            vertical-align: middle;
+        		color: white;
+        		font-family: sans-serif;
+        		font-weight: bold;
+            width: 75%;
+            height:55%;
+            font-size: 35px;
+        		position: relative;
+        		cursor: pointer;
+        		white-space: nowrap;
+}
+
+.button .option:hover::before{
+						box-shadow: 0px 3px 20px 0px black;
+            background-color: #098ccb;
+      			transform: scale(1.1);
+}
+
+.button .option:hover{
+  color: white;
+}
+
+.message::-webkit-scrollbar{
+  width: 12px;
+  background-color: transparent;
+}
+
+.message::-webkit-scrollbar-track{
+  border-radius: 10px;
+}
+
+.message::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    background-color: #ecff78;
+}
+
+.message::-webkit-scrollbar-track-piece:end {
+    background: transparent;
+    margin-bottom: 30px;
+}
+
+.message::-webkit-scrollbar-track-piece:start {
+    background: transparent;
+    margin-top: 30px;
+}

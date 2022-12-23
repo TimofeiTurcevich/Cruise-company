@@ -1,0 +1,258 @@
+html {
+  height: 100%;
+}
+
+a{
+  color: white;
+  text-decoration: underline;
+  margin-left: 10%;
+}
+
+body {
+  text-align: center;
+  margin:0;
+  padding:0;
+  font-family: sans-serif;
+    background: linear-gradient(180deg, rgba(9,140,203,1) 0%, rgba(236,255,120,1) 100%);
+    background-attachment: fixed;
+  	margin: 0;
+  	display: flex;
+  	justify-content: center;
+
+}
+
+h2{
+  margin: 0 0 50px;
+  padding: 0;
+  color: white;
+  text-align: center;
+  font-size: 24pt;
+}
+
+.login-box{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  padding: 100px;
+  background: rgba(0,0,0,.5);
+  box-shadow: 0 15px 50px rgba(0,0,0,.6);
+  box-sizing: border-box;
+  border-radius: 10px;
+  max-height: 90%;
+  overflow: auto;
+}
+
+.login-box::-webkit-scrollbar{
+  width: 12px;
+  background-color: transparent;
+}
+
+.login-box::-webkit-scrollbar-track{
+  border-radius: 10px;
+}
+
+.login-box::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    background-color: #ecff78;
+}
+
+.login-box::-webkit-scrollbar-track-piece:end {
+    background: transparent;
+    margin-bottom: 30px;
+}
+
+.login-box::-webkit-scrollbar-track-piece:start {
+    background: transparent;
+    margin-top: 30px;
+}
+
+.register{
+  white-space: nowrap;
+  position: relative;
+  display: inline-flex;
+  color: white;
+  top: 30px;
+  left: -15px;
+  margin-top: 10%;
+}
+
+.user{
+  position: relative;
+}
+
+.user input{
+  width: 95%;
+  padding: 10px 0;
+  font-size: 24px;
+  color: white;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid white;
+  outline: none;
+  background: transparent;
+}
+
+.user label{
+  position: absolute;
+  top:0;
+  left: 2.5%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: white;
+  pointer-events: none;
+  transition: .5s;
+}
+
+.user input:focus ~ label,
+.user input:valid ~ label{
+  top: -20px;
+  left: 2.5%;
+  color: #03e9f4;
+  font-size: 12px;
+}
+
+input[type="datetime-local"]:in-range::-webkit-datetime-edit-year-field, input[type="datetime-local"]:in-range::-webkit-datetime-edit-month-field, input[type="datetime-local"]:in-range::-webkit-datetime-edit-day-field, input[type="datetime-local"]:in-range::-webkit-datetime-edit-text { 	color: transparent; }
+
+input[type="submit"]{
+      border-radius: 25px;
+      border-color: transparent;
+      background-color: transparent;
+      list-style: none;
+      text-decoration: none;
+  		color: white;
+  		font-family: sans-serif;
+  		font-weight: bold;
+      font-size: 30px;
+      padding: 5px 6.53%;
+  		margin: 0 12px;
+  		position: relative;
+  		cursor: pointer;
+  		white-space: nowrap;
+      transition: .2s;
+      top: 30px;
+}
+
+input[type="submit"]:hover{
+          background-color: #ecff78;
+          color: black;
+    			box-shadow: 0px 3px 20px 0px black;
+          transform: scale(1.1);
+}
+.picklist{
+  position: relative;
+  max-width: 95%;
+  left: 2.5%;
+  height: 100px;
+  margin-bottom: 10%;
+}
+
+.picklist nav {
+  position: absolute;
+  width: 100%;
+  margin : 40px 0;
+}
+
+.picklist span {
+  border-radius: 25px;
+  border-color: #ecff78;
+  border-style: solid;
+  padding : 30px;
+  background : transparent;
+  color : white;
+  font-size : 20px;
+  font-family: sans-serif;
+  font-variant : small-caps;
+  cursor : pointer;
+  display: block;
+}
+
+.picklist span::after {
+  float: right;
+  right: 10%;
+  content: "+";
+}
+
+[id^='touch'] {
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  height: 0px;
+}
+
+[id^='touch']:checked + .test2 {
+    transition: max-height .8s ease;
+    border-color: #ecff78;
+    border-style: solid;
+    height: auto;
+    width: 98.2%;
+    max-height: 200px;
+  }
+
+
+
+.test2{
+  background-color: white;
+  z-index: 100000;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  position: relative;
+  background: #d9d9d9;
+  top: -23px;
+  width:85%;
+  max-height:0px;
+  overflow: auto;
+  text-align: center;
+  transition: max-height .4s ease;
+}
+
+
+
+.slide li {
+  cursor : pointer;
+  padding : 30px;
+}
+.picklist li a {text-decoration : none; color : #2d2f31;}
+
+
+
+
+.test2::-webkit-scrollbar{
+  width: 12px;
+  background-color: transparent;
+}
+
+.test2::-webkit-scrollbar-track-piece:end {
+    background: transparent;
+    margin-bottom: 10px;
+}
+
+.test2::-webkit-scrollbar-track-piece:start {
+    background: transparent;
+    margin-top: 10px;
+}
+
+.test2::-webkit-scrollbar-track{
+  border-radius: 10px;
+      background: transparent;
+  height: auto;
+}
+
+.test2::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+  background-color:#098ccb;
+}
+
+
+.station{
+  position: relative;
+  width: 100%;
+  height: auto;
+  border-style: solid;
+  margin-bottom: 2%;
+    border-radius: 25px;
+    border-color: #ecff78;
+}
