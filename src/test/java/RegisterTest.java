@@ -79,6 +79,7 @@ public class RegisterTest {
         Random random = mock(Random.class);
         IntStream intStream = mock(IntStream.class);
         StringBuilder stringBuilder = new StringBuilder("213");
+        HttpSession session = mock(HttpSession.class);
 
         registerServlet.userDAO = userDAO;
         registerServlet.random = random;
@@ -94,10 +95,12 @@ public class RegisterTest {
         when(intStream.limit(5)).thenReturn(intStream);
         when(intStream.collect(StringBuilder::new,StringBuilder::appendCodePoint, StringBuilder::append)).thenReturn(stringBuilder);
         when(userDAO.insertUser(user.getEmail(),"test",Date.valueOf("2022-03-02"),user.getFirstName(),user.getLastName(), user.getPhone(),"")).thenThrow(new SQLException());
+        when(req.getSession()).thenReturn(session);
 
         registerServlet.doPost(req,resp);
 
-        verify(resp).sendError(422,"User with this email is already exists");
+        verify(session).setAttribute("errorRegister",true);
+        verify(resp).sendRedirect("register.jsp");
     }
 
     @Test
@@ -109,6 +112,7 @@ public class RegisterTest {
         Random random = mock(Random.class);
         IntStream intStream = mock(IntStream.class);
         StringBuilder stringBuilder = new StringBuilder("213");
+        HttpSession session = mock(HttpSession.class);
 
         registerServlet.userDAO = userDAO;
         registerServlet.random = random;
@@ -124,9 +128,11 @@ public class RegisterTest {
         when(intStream.limit(5)).thenReturn(intStream);
         when(intStream.collect(StringBuilder::new,StringBuilder::appendCodePoint, StringBuilder::append)).thenReturn(stringBuilder);
         when(userDAO.insertUser(user.getEmail(),"test",Date.valueOf("2022-03-02"),user.getFirstName(),user.getLastName(), user.getPhone(),"")).thenReturn(null);
+        when(req.getSession()).thenReturn(session);
 
         registerServlet.doPost(req,resp);
 
+        verify(session).setAttribute("errorRegister",false);
         verify(resp).sendRedirect("register.jsp");
     }
 }

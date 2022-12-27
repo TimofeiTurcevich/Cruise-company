@@ -90,7 +90,8 @@ public class LoginTest {
         loginServlet.userDAO = userDAO;
         loginServlet.doPost(req,resp);
 
-        verify(resp).sendError(417,"Such user is not existing. Check your email and password");
+        verify(session).setAttribute("errorLogin",true);
+        verify(resp).sendRedirect("login.jsp");
     }
 
     @Test
@@ -99,10 +100,12 @@ public class LoginTest {
         LoginServlet loginServlet = new LoginServlet();
         HttpServletResponse resp = mock(HttpServletResponse.class);
         HttpServletRequest req =  mock(HttpServletRequest.class);
+        HttpSession session = mock(HttpSession.class);
 
         when(req.getParameter("email")).thenReturn("noUser@gmail.com");
         when(req.getParameter("pass")).thenReturn("noUserPass123!");
         when(userDAO.getUser("noUser@gmail.com","noUserPass123!")).thenThrow(new SQLException());
+        when(req.getSession()).thenReturn(session);
 
         loginServlet.userDAO = userDAO;
         loginServlet.doPost(req,resp);

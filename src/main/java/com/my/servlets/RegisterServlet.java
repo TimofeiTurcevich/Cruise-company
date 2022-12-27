@@ -54,7 +54,7 @@ public class RegisterServlet extends HttpServlet {
                 User user = userDAO.insertUser(email,pass,date,firstName,last_name, phone, code);
                 logger.info("User created");
                 if(user==null){
-                    resp.sendRedirect("register.jsp");
+                    throw new SQLException();
                 }else{
                     MailSender.send(email,"Verification code: " + code + ". If you close verification page - follow this link: http://localhost:8080/cruise-company/verify.jsp?id=" + user.getId());
                     resp.sendRedirect("verify.jsp?id="+user.getId());
