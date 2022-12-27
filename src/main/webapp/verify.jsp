@@ -13,7 +13,7 @@
     <body>
         <div class="login-box">
             <h2>
-                <fmt:message key="label.login"/>
+                <fmt:message key="label.verify"/>
                 </a></h2>
             <div class="error">
                 ${requestScope['javax.servlet.error.message']}
@@ -21,7 +21,7 @@
             <form name="myForm" action="verify?id=${param.id}" method="post">
                 <div class="user">
                     <input type="text" name="code" required="">
-                    <label>Code</label>
+                    <label><fmt:message key="label.verifyCode"/></label>
                 </div>
                 <input type="submit" name="" value=<fmt:message key="label.submitButton"/>>
             </form>

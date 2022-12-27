@@ -12,7 +12,7 @@ public class UserDB implements UserDAO {
 
     public User getUser(String email, String pass) throws SQLException {
         try (Connection con = ConnectionManager.getInstance().getDs().getConnection();
-             PreparedStatement ps = con.prepareStatement("SELECT user.*, role.name FROM user WHERE email = ? AND password = ? INNER JOIN role ON role.id = user.role")) {
+             PreparedStatement ps = con.prepareStatement("SELECT user.*, role.name FROM user  INNER JOIN role ON user.role = role.id WHERE email = ? AND password = ?")) {
             ps.setString(1, email);
             ps.setString(2, pass);
             ResultSet rs = ps.executeQuery();

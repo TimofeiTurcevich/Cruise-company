@@ -16,9 +16,11 @@
             <h2>
                 <fmt:message key="label.register"/>
                 </a></h2>
-            <div class="error">
-                ${requestScope['javax.servlet.error.message']}
-            </div>
+            <c:if test="${errorRegister}">
+                <div class="error">
+                    <fmt:message key="label.errorRegister"/>
+                </div>
+            </c:if>
             <form name="myForm" action="register" method="post" onsubmit="return validateForm()">
                 <div class="user">
                     <input type="text" name="email" required="">

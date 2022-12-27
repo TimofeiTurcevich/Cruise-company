@@ -16,9 +16,11 @@
             <h2>
                 <fmt:message key="label.login"/>
                 </a></h2>
-            <div class="error">
-                ${requestScope['javax.servlet.error.message']}
-            </div>
+            <c:if test="${errorLogin}">
+                <div class="error">
+                    <fmt:message key="label.errorLogin"/>
+                </div>
+            </c:if>
             <form name="myForm" action="login" method="post" onsubmit="return validateForm()">
                 <div class="user">
                     <input type="text" name="email" required="">

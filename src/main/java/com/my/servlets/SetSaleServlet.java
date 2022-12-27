@@ -50,7 +50,6 @@ public class SetSaleServlet extends HttpServlet {
                 if(voyage==null){
                     throw new SQLException();
                 }
-                //TODO
                 voyage.setSale(true);
                 voyage.setSaleStandardPrice(Integer.parseInt(req.getParameter("saleStandardPrice")));
                 voyage.setSaleLuxPrice(Integer.parseInt(req.getParameter("saleLuxPrice")));

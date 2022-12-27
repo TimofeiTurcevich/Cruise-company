@@ -16,7 +16,6 @@ public class ProfileServlet extends HttpServlet {
     static final Logger logger = LogManager.getLogger(ProfileServlet.class);
 
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        //TODO
         logger.info("Profile#DoGet");
         User user = (User) req.getSession().getAttribute("user");
         if(user==null){

@@ -39,6 +39,7 @@ public class RegisterServlet extends HttpServlet {
     public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
             try{
                 logger.info("Register#DoPost");
+                req.getSession().setAttribute("errorRegister",false);
                 String email= req.getParameter("email");
                 String pass = req.getParameter("pass");
                 Date date = Date.valueOf(req.getParameter("date"));
@@ -59,7 +60,8 @@ public class RegisterServlet extends HttpServlet {
                     resp.sendRedirect("verify.jsp?id="+user.getId());
                 }
             }catch (SQLException e){
-                resp.sendError(422,"User with this email is already exists");
+                req.getSession().setAttribute("errorRegister",true);
+                resp.sendRedirect("register.jsp");
             }
     }
 }
